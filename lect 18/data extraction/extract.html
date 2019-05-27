@@ -27,7 +27,7 @@
                 <div class="col-sm-4 rounded">
                     <textarea class="form-control"  id="resultArea" rows="15"  cols="30">
 
-                        </textarea>
+                    </textarea>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
         // Regular expression should be in 2 forward slashes //
         // Letter g at the end of the regular expression performs a global match
         // match() method returns all substrings that match the given regular expression
-        let regex = /.*/g;
+        let regex = /^(\s*)?(\+)?(\+|[\d]{2,4})?(\s|-)?\d{3,5}(\s|-)?\d{7}/g;
         <!-- Question : Write regular expression above in let regex -->
         let result = inputString.match(regex);
         if (result != null) {
