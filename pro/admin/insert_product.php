@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+
+<?php
+$con=mysqli_connect("localhost","root","","techboxdb");
+if(insset($_POST['insert-pro'])){
+    $title =$_POST['ProID'];
+    $cat=$_POST['ProCat'];
+    $brand=$_POST['ProBrand'];
+    $desc=$_POST['ProDesc'];
+    $price=$_POST['ProPrice'];
+    $kw=$_POST['ProKey'];
+
+    print_r($_POST);
+
+    $q="insert into products(ProTitle,ProCat,ProBrand,ProDec,ProPrice,ProKey) values('$title','$cat','$brand','$desc','$Price','$kw')";
+    mysqli_query($con,$q);
+    }
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
