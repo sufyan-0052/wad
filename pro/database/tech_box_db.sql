@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2019 at 01:50 PM
+-- Generation Time: Jun 18, 2019 at 11:01 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -21,6 +21,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `tech_box_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `user_id` int(10) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_pass` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`user_id`, `user_email`, `user_pass`) VALUES
+(1, 'wad@ucp', '123');
 
 -- --------------------------------------------------------
 
@@ -74,6 +93,32 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `cust_id` int(10) NOT NULL,
+  `cust_ip` varchar(255) NOT NULL,
+  `cust_name` varchar(100) NOT NULL,
+  `cust_email` varchar(100) NOT NULL,
+  `cust_pass` varchar(100) NOT NULL,
+  `cust_country` varchar(100) NOT NULL,
+  `cust_city` varchar(100) NOT NULL,
+  `cust_contact` varchar(100) NOT NULL,
+  `cust_address` varchar(255) NOT NULL,
+  `cust_image` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`cust_id`, `cust_ip`, `cust_name`, `cust_email`, `cust_pass`, `cust_country`, `cust_city`, `cust_contact`, `cust_address`, `cust_image`) VALUES
+(7, '::1', 'Muhammad Ali', 'ali@ucp', '123', 'Pakistan', 'Lahore', '03314527994', 'Iqbal Town', 'My Pic.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -109,6 +154,12 @@ INSERT INTO `products` (`pro_id`, `pro_cat`, `pro_brand`, `pro_title`, `pro_pric
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- Indexes for table `brands`
 --
 ALTER TABLE `brands`
@@ -121,6 +172,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`cust_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -129,6 +186,12 @@ ALTER TABLE `products`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `brands`
@@ -143,10 +206,16 @@ ALTER TABLE `categories`
   MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `cust_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `pro_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `pro_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
