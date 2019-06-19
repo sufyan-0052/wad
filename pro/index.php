@@ -95,9 +95,7 @@ require "server/functions.php";
     </nav>
     <article id="content" class="container-fluid bg-white">
         <div class="row">
-
-          <?php getPro();?>
-
+            <?php getPro(); ?>
         </div>
     </article>
 
